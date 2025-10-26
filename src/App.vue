@@ -19,9 +19,17 @@
     </main>
 
     <Footer />
+    
+    <!-- Toast Container -->
+    <ToastContainer :toasts="[...toasts]" />
   </div>
 </template>
 
 <script setup lang="ts">
 import Footer from './components/Footer.vue'
+import ToastContainer from './components/ToastContainer.vue'
+import { provideToast } from './composables/useToast'
+
+
+const { toasts } = provideToast()
 </script>
