@@ -1,10 +1,21 @@
 import type { Ticket } from "../types";
+import { getSession } from "./auth";
 
 const TICKETS_KEY = "mock_tickets";
 
+function ticketsStorageKey(): string {
+  const session = getSession();
+  if (session && session.email) {
+    
+    return `${TICKETS_KEY}_${session.email.toLowerCase()}`;
+  }
+  return TICKETS_KEY; 
+}
+
 function readTickets(): Ticket[] {
   try {
-    const raw = localStorage.getItem(TICKETS_KEY);
+    const key = ticketsStorageKey();
+    const raw = localStorage.getItem(key);
     return raw ? JSON.parse(raw) : [];
   } catch {
     return [];
@@ -12,7 +23,8 @@ function readTickets(): Ticket[] {
 }
 
 function writeTickets(tickets: Ticket[]) {
-  localStorage.setItem(TICKETS_KEY, JSON.stringify(tickets));
+  const key = ticketsStorageKey();
+  localStorage.setItem(key, JSON.stringify(tickets));
 }
 
 export async function getTickets(): Promise<Ticket[]> {
