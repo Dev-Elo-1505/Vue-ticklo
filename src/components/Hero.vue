@@ -22,7 +22,7 @@
           Create Tickets! Track Tickets!
         </h1>
         <p className="text-sm w-3/4">
-          Ticklo streamlines ticket management, withe <a href="">React</a> and
+          Ticklo streamlines ticket management, with the <a href="https://react-ticklo.vercel.app/" target="_blank" rel="noreferrer noopener">React</a> and
           <a href="">Twig</a> versions available!
         </p>
         <ButtonLink
