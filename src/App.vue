@@ -1,48 +1,27 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <h1 class="text-3xl font-bold text-red-500">Welcome to Vue 3 Tailwind CSS</h1>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div class="min-h-screen flex flex-col">
+    <!-- Background decoration -->
+    <div
+      aria-hidden="true"
+      class="fixed -top-16 -left-16 w-56 h-56 rounded-full pointer-events-none blur-3xl opacity-30 md:opacity-40"
+      style="background: var(--color-primary, #5bb0fe); z-index: 0"
+    />
+    <div
+      aria-hidden="true"
+      class="fixed -bottom-20 -right-20 w-72 h-72 rounded-full pointer-events-none blur-2xl opacity-20 md:opacity-30"
+      style="background: rgba(91,176,254,0.18); z-index: 0"
+    />
+    
+    <main class="flex-1 relative z-10">
+      <div class="mx-auto w-full">
+        <router-view />
+      </div>
+    </main>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <Footer />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+<script setup lang="ts">
+import Footer from './components/Footer.vue'
+</script>
