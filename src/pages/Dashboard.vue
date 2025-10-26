@@ -12,7 +12,7 @@
             class="bg-primary/10 border border-primary/30 rounded-md w-full h-32 p-2 md:p-4 md:mb-3 flex flex-col justify-between"
           >
             <p class="flex items-center gap-2">
-              <IoTicketOutline /> Total Tickets
+              <Icon icon="ion:ticket-outline" class="text-xl" /> Total Tickets
             </p>
             <p class="text-4xl font-bold mt-2">{{ tickets.length }}</p>
           </div>
@@ -21,7 +21,7 @@
             class="bg-[#fef2f2] border border-[#fca5a1] rounded-md w-full h-32 p-2 md:p-4 flex flex-col justify-between"
           >
             <p class="flex items-center gap-2">
-              <IoFolderOpenOutline /> Open Tickets
+              <Icon icon="ion:folder-open-outline" class="text-xl" /> Open Tickets
             </p>
             <p class="text-4xl font-bold mt-2">
               {{ openTicketsCount }}
@@ -34,7 +34,7 @@
             class="bg-[#fff7ed] border border-[#f7d56f] rounded-md w-full h-32 p-2 md:p-4 md:mb-3 flex flex-col justify-between"
           >
             <p class="flex items-center gap-2">
-              <RiProgress3Line class="text-xl" /> In Progress Tickets
+              <Icon icon="ri:progress-3-line" class="text-2xl" /> In Progress Tickets
             </p>
             <p class="text-4xl font-bold mt-2">
               {{ inProgressTicketsCount }}
@@ -45,7 +45,7 @@
             class="bg-[#f0fdf4] border border-[#6fff9a] rounded-md w-full h-32 p-2 md:p-4 md:mb-3 flex flex-col justify-between"
           >
             <p class="flex items-center gap-2">
-              <IoCheckmarkCircleOutline /> Closed Tickets
+              <Icon icon="ion:checkmark-circle-outline" class="text-xl"  /> Closed Tickets
             </p>
             <p class="text-4xl font-bold mt-2">
               {{ closedTicketsCount }}
@@ -77,13 +77,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from "vue";
 import { useRouter } from "vue-router";
-// import { IoOutlineTicket, AnOutlinedFolderOpen } from "@kalimahapps/vue-icons";
-// import {
-//   IoTicketOutline,
-//   IoFolderOpenOutline,
-//   IoCheckmarkCircleOutline,
-// } from "vue-icons/io5";
-// import { RiProgress3Line } from "vue-icons/ri";
+import { Icon } from '@iconify/vue';
 import AppNavbar from "../components/AppNavbar.vue";
 import ButtonLink from "../components/ButtonLink.vue";
 import Modal from "../components/Modal.vue";

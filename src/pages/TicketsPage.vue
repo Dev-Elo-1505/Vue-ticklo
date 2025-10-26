@@ -3,7 +3,7 @@
     <AppNavbar :is-loading="loading" @logout="showConfirm = true" />
     
     <main class="mt-6 flex flex-col items-center justify-center">
-      <!-- Empty State -->
+      
       <template v-if="tickets.length === 0">
         <div>
           <div
@@ -31,7 +31,7 @@
             <ButtonLink
               title="Go to Dashboard"
               location="/dashboard"
-              custom-class="bg-primary text-white text-center w-full md:w-32 mb-2 mt-2"
+              custom-class="bg-primary text-white text-center w-full md:w-36 mb-2 mt-2"
             />
             <Button
               title="Create Ticket"
